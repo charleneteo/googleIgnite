@@ -13,26 +13,24 @@ public class ProjectController {
     @Autowired
     private ProjectService projectService;
 
-    //HR METHODS
-    //To view all employees records
+
     @GetMapping("/getAll")
     public List<Project> getAllProjects(){
         List<Project> toReturn=projectService.getAllProjects();
-        if(toReturn.size()==0){
+        if(toReturn.size()==0) {
             throw new ProjectNotFoundException();
-//            System.out.println("HERE");
         }
         return toReturn;
     }
 
-    //To add new user
-    @PostMapping("/hr/create/{newUser}")
+
+    @PostMapping("/create/{newProject}")
     public void createProject(@RequestBody Project project){
         projectService.addNewProject(project);
     }
 
-    //EMPLOYEE METHODS
-    @GetMapping("/get/{Id}")
+
+    @GetMapping("/get/{projectId}")
     public Project getProjectById(@PathVariable String projectId){
         Project project=projectService.getProjectById(projectId);
 
@@ -44,7 +42,7 @@ public class ProjectController {
     }
 
 
-    @DeleteMapping("/del/{email}")
+    @DeleteMapping("/del/{projectId}")
     void deleteUser(@PathVariable String projectId ){
         Project project= projectService.getProjectById(projectId);
         if(project==null){
