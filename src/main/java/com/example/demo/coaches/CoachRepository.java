@@ -1,4 +1,8 @@
 package com.example.demo.coaches;
 
-public class CoachRepository {
+import com.example.demo.coaches.*;
+import org.springframework.data.repository.CrudRepository;
+
+public class CoachRepository extends CrudRepository<Coach, Integer>{
+
 }

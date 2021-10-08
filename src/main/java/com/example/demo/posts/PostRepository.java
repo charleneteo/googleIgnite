@@ -1,4 +1,8 @@
 package com.example.demo.posts;
 
-public class PostRepository {
+import com.example.demo.posts.*;
+import org.springframework.data.repository.CrudRepository;
+
+public class PostRepository extends CrudRepository{
+
 }
