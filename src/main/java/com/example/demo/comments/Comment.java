@@ -1,4 +1,4 @@
-package com.example.demo.commments;
+package src.main.java.com.example.demo.comments;
 
 import javax.persistence.*;
 import lombok.*;
