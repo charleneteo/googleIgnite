@@ -18,5 +18,6 @@ public class Coach {
         inverseJoinColumns=
     @JoinColumn(name="coach_id"))
     private Set<User> users = new HashSet<>();
+    asdfs
 
 }
