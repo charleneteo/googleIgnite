@@ -10,7 +10,7 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    private UserService userService;
+    private UserServiceImpl userService;
 
     @GetMapping("/getAll")
     public List<User> getUsers(){
