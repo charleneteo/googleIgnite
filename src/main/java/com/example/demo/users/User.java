@@ -1,5 +1,7 @@
 package com.example.demo.users;
 import com.example.demo.projects.Project;
+import com.example.demo.coaches.Coach;
+import com.example.demo.posts.Post;
 import lombok.*;
 
 import javax.persistence.*;
@@ -12,7 +14,7 @@ import java.util.*;
 @NoArgsConstructor
 @Entity
 @AllArgsConstructor
-
+@Data
 public class User {
     @Id
     @Column(name = "email", nullable = false)
