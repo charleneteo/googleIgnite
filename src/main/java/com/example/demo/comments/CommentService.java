@@ -1,4 +1,4 @@
-package src.main.java.com.example.demo.comments;
+package com.example.demo.comments;
 
 import com.example.demo.comments.*;
 import org.springframework.beans.factory.annotation.Autowired;
