@@ -21,7 +21,7 @@ public class Project {
     private String description;
     private Enum projectType;
 
-    @ManyToMany(mappedBy="Project")
+    @ManyToMany(mappedBy="userProjects")
     List<User> users;
 
     public Project(String projectId, String description, Enum projectType) {

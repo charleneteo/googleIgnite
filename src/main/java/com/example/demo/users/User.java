@@ -24,16 +24,10 @@ public class User {
     private String password;
 
     @ManyToMany
-    @JoinTable(name="",
+    @JoinTable(name="projectAndUsers",
     joinColumns=@JoinColumn(name="email"),
     inverseJoinColumns=@JoinColumn(name="projectId"))
     List<Project> userProjects;
-
-    @ManyToMany
-    private Set<Coach> coaches = new HashSet<>();
-
-    @OneToMany(mappedBy = "user")
-    private List<Post> posts;
 
     public User(String email, String fname, String lname, String password) {
         this.email = email;
