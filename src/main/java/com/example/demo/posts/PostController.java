@@ -27,7 +27,7 @@ public class PostController {
     }
 
     @GetMapping("/get/{id}")
-    public Coach findPostById(Integer id){
+    public Post findPostById(Integer id){
         try{
             return postService.getPostById(id);
         } catch(NullPointerException E){

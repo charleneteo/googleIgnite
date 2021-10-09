@@ -15,15 +15,17 @@ public class CommentService {
     }
 
     public Comment getCommentById(Integer commentId){
-        Comment toReturn = commentRepository.findById(commentId);
-        if(toReturn != null){
-            return toReturn;
-        }
-        return null;
+        Optional<Comment> c = commentRepository.findById(commentId);
+        if (c.isPresent()) {
+            Comment comment = c.get();
+            return comment;
+        } else
+            return null;
     }
 
     public void addComment(String content){
         Comment comment = new Comment();
-        comment.setComment(content);
+        comment.setContent(content);
+        commentRepository.save(comment);
     }
 }

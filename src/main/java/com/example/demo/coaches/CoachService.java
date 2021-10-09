@@ -14,11 +14,12 @@ public class CoachService {
         return coachRepository.findAll();
     }
 
-    public Coach getCoachById(Integer coachId){
-        Coach toReturn = coachRepository.findById(coachId);
-        if(toReturn != null){
-            return toReturn;
-        }
-        return null;
+    public Coach getCoachById(String email){
+        Optional<Coach> coach = coachRepository.findById(email);
+        if (coach.isPresent()) {
+            Coach c = coach.get();
+            return c;
+        } else
+            return null;
     }
 }

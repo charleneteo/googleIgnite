@@ -21,8 +21,8 @@ public class Project {
     private String description;
     private Enum projectType;
 
-    @ManyToMany(mappedBy="userProjects")
-    ArrayList<User> users;
+    @ManyToMany(mappedBy="Project")
+    List<User> users;
 
     public Project(String projectId, String description, Enum projectType) {
         this.projectId = projectId;

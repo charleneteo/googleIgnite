@@ -1,0 +1,4 @@
+src/main/java/com/example/demo/comments/CommentService.class
+src/main/java/com/example/demo/comments/CommentRepository.class
+src/main/java/com/example/demo/comments/Comment.class
+src/main/java/com/example/demo/comments/CommentController.class

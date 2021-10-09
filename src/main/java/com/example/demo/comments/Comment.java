@@ -1,10 +1,13 @@
 package src.main.java.com.example.demo.comments;
 
+import com.example.demo.posts.Post;
+import com.example.demo.users.User;
 import javax.persistence.*;
 import lombok.*;
+import java.util.*;
 
-@Entity
 @Data
+@Entity
 public class Comment {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)

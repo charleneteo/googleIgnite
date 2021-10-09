@@ -14,17 +14,18 @@ public class PostService {
         return postRepository.findAll();
     }
 
-    public Post getPostById(Integer postId){
-        Post toReturn = postRepository.findById(postId);
-        if(toReturn != null){
-            return toReturn;
-        }
-        return null;
+    public Post getPostById(int postId){
+        Optional<Post> p = postRepository.findById(postId);
+        if (p.isPresent()) {
+            Post post = p.get();
+            return post;
+        } else
+            return null;
     }
 
     public void addPost(String content){
         Post post = new Post();
         post.setContent(content);
+        postRepository.save(post);
     }
-
 }

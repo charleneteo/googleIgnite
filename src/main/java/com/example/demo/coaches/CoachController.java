@@ -26,10 +26,10 @@ public class CoachController {
         }
     }
 
-    @GetMapping("/get/{id}")
-    public Coach findCoachById(Integer id){
+    @GetMapping("/get/{email}")
+    public Coach findCoachById(String email){
         try{
-            return coachService.getCoachById(id);
+            return coachService.getCoachById(email);
         } catch(NullPointerException E){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,
             "Coach not found!");

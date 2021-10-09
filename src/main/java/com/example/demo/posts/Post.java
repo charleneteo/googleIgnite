@@ -1,7 +1,10 @@
 package com.example.demo.posts;
 
+import com.example.demo.users.User;
+import com.example.demo.commments.Comment;
 import javax.persistence.*;
 import lombok.*;
+import java.util.*;
 
 @Entity
 @Data
