@@ -1,9 +1,12 @@
 package com.example.demo.projects;
 
 import com.example.demo.users.User;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
+@Service
 public class ProjectService {
 
     private ProjectRepository projectRepository;

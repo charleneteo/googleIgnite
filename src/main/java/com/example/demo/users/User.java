@@ -22,10 +22,10 @@ public class User {
     private String password;
 
     @ManyToMany
-    @JoinTable(name="",
+    @JoinTable(name="projectAndUsers",
     joinColumns=@JoinColumn(name="email"),
     inverseJoinColumns=@JoinColumn(name="projectId"))
-    ArrayList<Project> userProjects;
+    List<Project> userProjects;
 
     public User(String email, String fname, String lname, String password) {
         this.email = email;

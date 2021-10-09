@@ -22,7 +22,7 @@ public class Project {
     private Enum projectType;
 
     @ManyToMany(mappedBy="userProjects")
-    ArrayList<User> users;
+    List<User> users;
 
     public Project(String projectId, String description, Enum projectType) {
         this.projectId = projectId;
