@@ -32,9 +32,9 @@ public class UserServiceImpl implements UserDetailsService {
             throw new IllegalStateException("email already taken");
         }
         //encrypting password
-        String encodedPassword = passwordEncoder.bCryptPasswordEncoder()
-                .encode(user.getPassword());
-        user.setPassword(encodedPassword);
+//        String encodedPassword = passwordEncoder.bCryptPasswordEncoder()
+//                .encode(user.getPassword());
+//        user.setPassword(encodedPassword);
         userRepository.save(user);
     }
 
