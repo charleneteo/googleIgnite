@@ -1,6 +1,7 @@
 package com.example.demo.projects;
 
 import com.example.demo.users.User;
+import com.example.demo.projects.*;
 import lombok.*;
 
 import javax.persistence.*;
@@ -16,19 +17,11 @@ import java.util.*;
 
 public class Project {
     @Id
-    @Column(name = "email", nullable = false)
-    private String projectId;
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Integer projectId;
     private String description;
-    private Enum projectType;
+    private ProjectType projectType;
 
     @ManyToMany(mappedBy="userProjects")
     List<User> users;
-
-    public Project(String projectId, String description, Enum projectType) {
-        this.projectId = projectId;
-        this.description = description;
-        this.projectType = projectType;
-    }
-
-
 }

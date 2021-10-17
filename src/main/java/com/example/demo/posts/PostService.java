@@ -23,9 +23,7 @@ public class PostService {
             return null;
     }
 
-    public void addPost(String content){
-        Post post = new Post();
-        post.setContent(content);
+    public void addPost(Post post){
         postRepository.save(post);
     }
 }

@@ -22,4 +22,8 @@ public class CoachService {
         } else
             return null;
     }
+
+    public void addCoach(Coach coach){
+        coachRepository.save(coach);
+    }
 }
