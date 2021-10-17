@@ -37,6 +37,15 @@ public class CoachController {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR,
             "Unknown error occurs, please try again!");
         }
+    }
 
+    @PostMapping("/add")
+    public void addCoach(Coach coach){
+        try{
+            coachService.addCoach(coach);
+        } catch(Exception E){
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR,
+            "Unknown error occurs, please try again!");
+        }
     }
 }

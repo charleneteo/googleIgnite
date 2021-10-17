@@ -23,9 +23,7 @@ public class CommentService {
             return null;
     }
 
-    public void addComment(String content){
-        Comment comment = new Comment();
-        comment.setContent(content);
+    public void addComment(Comment comment){
         commentRepository.save(comment);
     }
 }

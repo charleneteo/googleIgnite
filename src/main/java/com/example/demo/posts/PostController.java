@@ -41,9 +41,9 @@ public class PostController {
     }
 
     @PostMapping("/add")
-    public void addPost(String content){
+    public void addPost(Post post){
         try{
-            postService.addPost(content);
+            postService.addPost(post);
         } catch(Exception E){
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR,
             "Unknown error occurs, please try again!");

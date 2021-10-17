@@ -41,7 +41,7 @@ public class CommentController {
     }
 
     @PostMapping("/add")
-    public void addComment(String content){
+    public void addComment(Comment content){
         try{
             commentService.addComment(content);
         } catch(Exception E){

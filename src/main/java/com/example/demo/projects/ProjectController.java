@@ -24,7 +24,7 @@ public class ProjectController {
     }
 
 
-    @PostMapping("/create/{newProject}")
+    @PostMapping("/create")
     public void createProject(@RequestBody Project project){
         projectService.addNewProject(project);
     }
