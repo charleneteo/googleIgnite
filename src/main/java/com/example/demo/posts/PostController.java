@@ -17,7 +17,7 @@ public class PostController {
     private PostService postService;
 
     @GetMapping("/all")
-    public List<Post> findAllComment(){
+    public List<Post> findAllPost(){
         try{
             return postService.getAll();
         } catch(Exception E){

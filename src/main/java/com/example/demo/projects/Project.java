@@ -3,6 +3,7 @@ package com.example.demo.projects;
 import com.example.demo.users.User;
 import com.example.demo.projects.*;
 import lombok.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import java.util.*;
@@ -20,8 +21,7 @@ public class Project {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer projectId;
     private String description;
-    private ProjectType projectType;
-
+    private String projectType;
     @ManyToMany(mappedBy="userProjects")
     List<User> users;
 }

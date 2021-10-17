@@ -15,7 +15,7 @@ public class Post {
     private String content;
 
     @OneToMany(mappedBy="post", orphanRemoval=true, cascade=CascadeType.ALL)
-    private Set<Comment> comments;
+    private List<Comment> comments;
 
     @ManyToOne
     @JoinColumn(name="user_id")

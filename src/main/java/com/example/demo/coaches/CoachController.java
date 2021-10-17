@@ -40,7 +40,7 @@ public class CoachController {
     }
 
     @PostMapping("/add")
-    public void addCoach(Coach coach){
+    public void registerCoach(Coach coach){
         try{
             coachService.addCoach(coach);
         } catch(Exception E){

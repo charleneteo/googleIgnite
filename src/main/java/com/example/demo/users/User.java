@@ -17,7 +17,6 @@ import java.util.*;
 @Data
 public class User {
     @Id
-    @Column(name = "email", nullable = false)
     private String email;
     private String fname;
     private String lname;
@@ -29,6 +28,12 @@ public class User {
     inverseJoinColumns=@JoinColumn(name="projectId"))
     List<Project> userProjects;
 
+    @OneToMany(mappedBy="user")
+    private List<Post> posts;
+
+    @ManyToMany(mappedBy="users")
+    private List<Coach> coaches;
+    
     public User(String email, String fname, String lname, String password) {
         this.email = email;
         this.fname = fname;
