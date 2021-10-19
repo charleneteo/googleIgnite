@@ -1,10 +1,12 @@
 package com.example.demo.users;
+
 import com.example.demo.projects.Project;
 import com.example.demo.coaches.Coach;
 import com.example.demo.posts.Post;
 import lombok.*;
-
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import javax.persistence.*;
+import java.io.*;
 import java.util.*;
 
 
@@ -15,7 +17,7 @@ import java.util.*;
 @Entity
 @AllArgsConstructor
 @Data
-public class User {
+public class User implements Serializable{
     @Id
     private String email;
     private String fname;
@@ -26,13 +28,14 @@ public class User {
     @JoinTable(name="projectAndUsers",
     joinColumns=@JoinColumn(name="email"),
     inverseJoinColumns=@JoinColumn(name="projectId"))
-    List<Project> userProjects;
+    private Set<Project> userProjects;
 
     @OneToMany(mappedBy="user")
+    @JsonManagedReference
     private List<Post> posts;
 
     @ManyToMany(mappedBy="users")
-    private List<Coach> coaches;
+    private Set<Coach> coaches;
     
     public User(String email, String fname, String lname, String password) {
         this.email = email;

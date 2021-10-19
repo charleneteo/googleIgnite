@@ -3,7 +3,6 @@ package com.example.demo.projects;
 import com.example.demo.users.User;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.List;
 
 
