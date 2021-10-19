@@ -1,5 +1,6 @@
 package com.example.demo.comments;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.example.demo.posts.Post;
 import com.example.demo.users.User;
 import javax.persistence.*;
@@ -15,10 +16,9 @@ public class Comment {
     private String content;
 
     @ManyToOne
-    @JoinColumn(name="user_id")
-    private User user;
-
-    @ManyToOne
     @JoinColumn(name="post_id")
+    @JsonBackReference
     private Post post;
+
+    
 }

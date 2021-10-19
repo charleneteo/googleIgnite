@@ -27,7 +27,7 @@ public class CoachController {
     }
 
     @GetMapping("/get/{email}")
-    public Coach findCoachById(String email){
+    public Coach findCoachById(@PathVariable String email){
         try{
             return coachService.getCoachById(email);
         } catch(NullPointerException E){
@@ -40,7 +40,7 @@ public class CoachController {
     }
 
     @PostMapping("/add")
-    public void addCoach(Coach coach){
+    public void registerCoach(@RequestBody Coach coach){
         try{
             coachService.addCoach(coach);
         } catch(Exception E){

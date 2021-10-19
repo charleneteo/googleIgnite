@@ -1,5 +1,7 @@
 package com.example.demo.posts;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.example.demo.users.User;
 import com.example.demo.comments.Comment;
 import javax.persistence.*;
@@ -15,10 +17,12 @@ public class Post {
     private String content;
 
     @OneToMany(mappedBy="post", orphanRemoval=true, cascade=CascadeType.ALL)
-    private Set<Comment> comments;
+    @JsonManagedReference
+    private List<Comment> comments;
 
     @ManyToOne
     @JoinColumn(name="user_id")
+    @JsonBackReference
     private User user;
 
 }
