@@ -27,7 +27,7 @@ public class PostController {
     }
 
     @GetMapping("/get/{id}")
-    public Post findPostById(Integer id){
+    public Post findPostById(@PathVariable Integer id){
         try{
             return postService.getPostById(id);
         } catch(NullPointerException E){
@@ -41,7 +41,7 @@ public class PostController {
     }
 
     @PostMapping("/add")
-    public void addPost(Post post){
+    public void addPost(@RequestBody Post post){
         try{
             postService.addPost(post);
         } catch(Exception E){

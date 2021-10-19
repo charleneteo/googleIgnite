@@ -17,6 +17,6 @@ public class Coach {
     @JoinColumn(name="user_id"),
         inverseJoinColumns=
     @JoinColumn(name="coach_id"))
-    private Set<User> users = new HashSet<>();
+    private List<User> users;
 
 }

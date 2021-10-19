@@ -15,6 +15,7 @@
 /mnt/c/Projects/googleIgnite/src/main/java/com/example/demo/comments/CommentService.java
 /mnt/c/Projects/googleIgnite/src/main/java/com/example/demo/users/UserRepository.java
 /mnt/c/Projects/googleIgnite/src/main/java/com/example/demo/projects/ProjectRepository.java
+/mnt/c/Projects/googleIgnite/src/main/java/com/example/demo/projects/ProjectType.java
 /mnt/c/Projects/googleIgnite/src/main/java/com/example/demo/comments/CommentController.java
 /mnt/c/Projects/googleIgnite/src/main/java/com/example/demo/posts/PostRepository.java
 /mnt/c/Projects/googleIgnite/src/main/java/com/example/demo/projects/Project.java

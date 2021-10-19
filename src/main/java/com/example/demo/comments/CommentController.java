@@ -27,7 +27,7 @@ public class CommentController {
     }
 
     @GetMapping("/get/{id}")
-    public Comment findCommentById(Integer id){
+    public Comment findCommentById(@PathVariable Integer id){
         try{
             return commentService.getCommentById(id);
         } catch(NullPointerException E){
@@ -41,7 +41,7 @@ public class CommentController {
     }
 
     @PostMapping("/add")
-    public void addComment(Comment content){
+    public void addComment(@RequestBody Comment content){
         try{
             commentService.addComment(content);
         } catch(Exception E){
