@@ -6,13 +6,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/user")
+@CrossOrigin
 public class UserController {
 
     @Autowired
     private UserServiceImpl userService;
 
-    @GetMapping("/getAll")
+    @GetMapping("/users/getAll")
     public List<User> getUsers(){
         List<User> toReturn=userService.getAllUsers();
         if(toReturn.size()==0){
@@ -22,13 +22,19 @@ public class UserController {
         return toReturn;
     }
 
-    @PostMapping("/create")
-    public void newUser(@RequestBody User newUser){
+    @PostMapping("/Register")
+    public void Register(@RequestBody User newUser){
+
         userService.addNewUser(newUser);
     }
 
+    @PostMapping("/Login")
+    public void Login(@RequestBody User newUser){
+        userService.Login(newUser);
+    }
 
-    @GetMapping("/get/{email}")
+
+    @GetMapping("/users/get/{email}")
     public User getUserByEmail(@PathVariable String email){
 
         User user=userService.getUserByEmail(email);
