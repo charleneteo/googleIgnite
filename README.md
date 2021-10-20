@@ -22,3 +22,7 @@ Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/
 ```shell
 mvn spring-boot:run
 ```
+
+This app will run on host 8082
+
+In addition, the database is linked to Google Cloud Platform.
